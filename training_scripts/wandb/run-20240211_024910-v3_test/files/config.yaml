@@ -1,0 +1,77 @@
+wandb_version: 1
+
+learning_rate:
+  desc: null
+  value: 0.001
+epochs:
+  desc: null
+  value: 15
+weight_decay:
+  desc: null
+  value: 0
+batch_size_per_gpu:
+  desc: null
+  value: 32
+architecture:
+  desc: null
+  value: db_resnet50
+input_size:
+  desc: null
+  value: 512
+optimizer:
+  desc: null
+  value: adam
+framework:
+  desc: null
+  value: pytorch
+scheduler:
+  desc: null
+  value: cosine
+easy_train_hash_d2:
+  desc: null
+  value: 263b07ca7eeadd2d56f9fcea899f30f84647e923dd6bb40c086bdf16cab731eb
+medium_train_hash_d2:
+  desc: null
+  value: 991638bb795e039b17825a9007e2b679edfebe7755bd69dcb9b387c1a6ac92bf
+hard_train_hash_d2:
+  desc: null
+  value: c1bee360774bce549d954e3236010898ddf16d331527e522b4c583b0905d45c7
+val_hash_d2:
+  desc: null
+  value: d985c4e50f7b454f98f3026ba840af1fb2b4679f19808d1617b35ac5650c074f
+pretrained:
+  desc: null
+  value: true
+rotation:
+  desc: null
+  value: false
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.2
+    cli_version: 0.16.2
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1707599951.022888
+    t:
+      1:
+      - 1
+      - 41
+      - 49
+      - 55
+      2:
+      - 1
+      - 41
+      - 49
+      - 55
+      3:
+      - 13
+      - 14
+      - 16
+      - 23
+      4: 3.11.2
+      5: 0.16.2
+      8:
+      - 5
+      13: linux-x86_64

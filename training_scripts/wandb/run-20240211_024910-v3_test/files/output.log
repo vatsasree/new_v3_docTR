@@ -1,0 +1,79 @@
+Last Epoch: 0
+Number of params: 40
+Entered epoch!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+
+
+Traceback (most recent call last):                                                                                                 | 10/3966 [06:56<44:22:05, 40.38s/it]
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/tqdm/std.py", line 1197, in __iter__
+    self.close()
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/tqdm/std.py", line 1291, in close
+    fp_write('')
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/tqdm/std.py", line 1288, in fp_write
+    self.fp.write(str(s))
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/tqdm/utils.py", line 195, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/wandb/sdk/lib/redirect.py", line 643, in write
+    cb(data)
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/wandb/sdk/wandb_run.py", line 2163, in <lambda>
+    lambda data: self._console_raw_callback("stderr", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/wandb/sdk/wandb_run.py", line 371, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/wandb/sdk/wandb_run.py", line 1493, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/wandb/sdk/interface/interface.py", line 647, in publish_output_raw
+    o.timestamp.GetCurrentTime()
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/google/protobuf/internal/well_known_types.py", line 174, in GetCurrentTime
+    self.FromDatetime(datetime.datetime.utcnow())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt:
+Traceback (most recent call last):
+  File "/home2/sreevatsa/py-scripts/training-scripts/new_v3_docTR/training_scripts/fabrictr1.py", line 1612, in <module>
+    main(args)
+  File "/home2/sreevatsa/py-scripts/training-scripts/new_v3_docTR/training_scripts/fabrictr1.py", line 1353, in main
+    train_loss = fit_one_epoch(model, train_loader, batch_transforms, optimizer, scheduler, mb, amp=args.amp)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/py-scripts/training-scripts/new_v3_docTR/training_scripts/fabrictr1.py", line 531, in fit_one_epoch
+    train_loss = model(images, targets)["loss"]
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/doctr/models/detection/differentiable_binarization/pytorch.py", line 220, in forward
+    loss = self.compute_loss(logits, thresh_map, target)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/doctr/models/detection/differentiable_binarization/pytorch.py", line 241, in compute_loss
+    targets = self.build_target(target, prob_map.shape, False)  # type: ignore[arg-type]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/doctr/models/detection/differentiable_binarization/base.py", line 347, in build_target
+    poly, thresh_target[idx, class_idx], thresh_mask[idx, class_idx] = self.draw_thresh_map(
+                                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home2/sreevatsa/.local/lib/python3.11/site-packages/doctr/models/detection/differentiable_binarization/base.py", line 223, in draw_thresh_map
+    padded_polygon: np.ndarray = np.array(padding.Execute(distance)[0])
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
